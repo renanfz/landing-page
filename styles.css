@@ -563,10 +563,10 @@ svg {
 }
 
 .pay-name {
-     font-weight: 400;
+     font-weight: 500;
      color: var(--color-text);
      flex: 1;
-     font-size: var(--font-size-lg);
+     font-size: var(--font-size-md);
 }
 
 .pay-check {
