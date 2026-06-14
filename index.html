@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MilkshakeMix - Peça seu Milkshake</title>
+     <link rel="stylesheet" href="styles.css">
+     <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+     <div class="app-container">
+
+          <!-- SCREEN 1: HOME -->
+          <section id="screen-home" class="screen active">
+               <header class="app-header">
+                    <h1 class="logo">🥤 MilkshakeMix</h1>
+               </header>
+
+               <main class="content">
+                    <div class="intro">
+                         <p class="subtitle">Escolha sua categoria favorita</p>
+                    </div>
+
+                    <div class="card-list">
+                         <!-- Açaí Card -->
+                         <article id="acai-card" class="card category-card" data-category="acai">
+                              <div class="card-image placeholder">
+                                   <span class="emoji-icon">🫐</span>
+                              </div>
+                              <h2 class="card-title">Açaí</h2>
+                              <p class="card-desc">Refrescante e delicioso</p>
+                              <button class="btn btn-primary">Escolher</button>
+                         </article>
+
+                         <!-- Ice Cream Card -->
+                         <article id="ice-card" class="card category-card" data-category="ice-cream">
+                              <div class="card-image placeholder">
+                                   <span class="emoji-icon">🍦</span>
+                              </div>
+                              <h2 class="card-title">Sorvete</h2>
+                              <p class="card-desc">Cremoso e saboroso</p>
+                              <button class="btn btn-primary">Escolher</button>
+                         </article>
+                    </div>
+               </main>
+          </section>
+
+          <!-- SCREEN 2: CUP SIZE -->
+          <section id="screen-size" class="screen hidden">
+               <header class="screen-header">
+                    <button id="btn-back-size" class="btn-back">
+                         <i data-lucide="chevron-left"></i>
+                    </button>
+                    <h2 class="screen-title">Escolha o tamanho</h2>
+               </header>
+               <div class="progress">
+                    <div class="lin lin-active"></div>
+                    <div class="lin"></div>
+                    <div class="lin"></div>
+               </div>
+
+               <main class="content">
+                    <div class="size-list">
+                         <!-- Small Size -->
+                         <label class="size-option">
+                              <input type="radio" name="size" id="size-small" value="small" data-ml="300">
+                              <div class="size-card">
+                                   <span class="size-icon"><i data-lucide="glass-water"></i></span>
+                                   <div class="size-info">
+                                        <p class="size-name">Pequeno</p>
+                                        <p class="size-amount">300 ml</p>
+                                   </div>
+                                   <p data-price="7">R$ 7,00</p>
+                                   <span class="size-check"></span>
+                              </div>
+                         </label>
+
+                         <!-- Medium Size -->
+                         <label class="size-option">
+                              <input type="radio" name="size" id="size-medium" value="medium" data-ml="500">
+                              <div class="size-card">
+                                   <span class="size-icon"><i data-lucide="glass-water"></i></span>
+                                   <div class="size-info">
+                                        <p class="size-name">Médio</p>
+                                        <p class="size-amount">500 ml</p>
+                                   </div>
+                                   <p data-price="12">R$ 12,00</p>
+                                   <span class="size-check"></span>
+                              </div>
+                         </label>
+
+                         <!-- Large Size -->
+                         <label class="size-option">
+                              <input type="radio" name="size" id="size-large" value="large" data-ml="700">
+                              <div class="size-card">
+                                   <span class="size-icon"><i     data-lucide="glass-water"></i></span>
+                                   <div class="size-info">
+                                        <p class="size-name">Grande</p>
+                                        <p class="size-amount">700 ml</p>
+                                   </div>
+                                   <p data-price="15">R$ 15,00</p>
+                                   <span class="size-check"></span>
+                              </div>
+                         </label>
+                    </div>
+               </main>
+
+               <footer class="screen-footer">
+                    <button id="btn-next-size" class="btn btn-primary btn-full">Próximo</button>
+               </footer>
+          </section>
+
+          <!-- SCREEN 3: TOPPINGS -->
+          <section id="screen-toppings" class="screen hidden">
+               <header class="screen-header">
+                    <button id="btn-back-toppings" class="btn-back"><i data-lucide="chevron-left"></i></button>
+                    <h2 class="screen-title">Escolha os acompanhamentos</h2>
+               </header>
+               <div class="progress">
+                    <div class="lin lin-active"></div>
+                    <div class="lin lin-active"></div>
+                    <div class="lin"></div>
+               </div>
+               <main class="content">
+                    <p class="hint">Selecione um ou mais itens</p>
+
+                    <div class="top-list">
+                         <!-- Chocolate -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="chocolate" data-topping="chocolate">
+                              <div class="top-card">                                   <span class="top-name">Chocolate</span>
+                              <span class="top-check"></span>
+                              <span class="price-toppings" data-price-topping="5.50">R$ 5,50</span>
+                              </div>
+                         </label>
+
+                         <!-- Powdered Milk -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="powdered-milk" data-topping="powdered-milk">
+                              <div class="top-card">
+                                   <span class="top-name">Leite em Pó</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="5.50">R$ 5,50</span>
+                              </div>
+                         </label>
+
+                         <!-- Condensed Milk -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="condensed-milk"
+                                   data-topping="condensed-milk">
+                              <div class="top-card">
+                                   <span class="top-name">Leite Condensado</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="3">R$ 3,00</span>
+                              </div>
+                         </label>
+
+                         <!-- Paçoca -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="pacoca" data-topping="pacoca">
+                              <div class="top-card">
+                                   <span class="top-name">Paçoca</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="2">R$ 2,00</span>
+                              </div>
+                         </label>
+
+                         <!-- Strawberry -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="strawberry" data-topping="strawberry">
+                              <div class="top-card">
+                                   <span class="top-name">Morango</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="6.90">R$ 6,90</span>
+                              </div>
+                         </label>
+
+                         <!-- Banana -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="banana" data-topping="banana">
+                              <div class="top-card">
+                                   <span class="top-name">Banana</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="5">R$ 5,00</span>
+                              </div>
+                         </label>
+
+                         <!-- Sprinkles -->
+                         <label class="top-item">
+                              <input type="checkbox" name="toppings" value="sprinkles" data-topping="sprinkles">
+                              <div class="top-card">
+                                   <span class="top-name">Granulado</span>
+                                   <span class="top-check"></span>
+                                   <span class="price-toppings" data-price-topping="1.50">R$ 1,50</span>
+                              </div>
+                         </label>
+                    </div>
+               </main>
+
+               <footer class="screen-footer">
+                    <button id="btn-next-toppings" class="btn btn-primary btn-full">Próximo</button>
+               </footer>
+          </section>
+
+          <!-- SCREEN 4: PAYMENT -->
+          <section id="screen-payment" class="screen hidden">
+               <header class="screen-header">
+                    <button id="btn-back-payment" class="btn-back"><i data-lucide="chevron-left"></i></button>
+                    <h2 class="screen-title">Método de pagamento</h2>
+               </header>
+               <div class="progress">
+                    <div class="lin lin-active"></div>
+                    <div class="lin lin-active"></div>
+                    <div class="lin lin-active"></div>
+               </div>
+
+               <main class="content">
+                    <div class="pay-list">
+                         <!-- PIX -->
+                         <label class="pay-item">
+                              <input type="radio" name="payment" id="pay-pix" value="pix">
+                              <div class="pay-card">
+                                   <span class="pay-icon">
+                                        <img src="https://img.icons8.com/color/512/pix.png">
+                                   </span>
+                                   <p class="pay-name">PIX</p>
+                                   <span class="pay-check"></span>
+                              </div>
+                         </label>
+
+                         <!-- Credit Card -->
+                         <label class="pay-item">
+                              <input type="radio" name="payment" id="pay-credit" value="credit">
+                              <div class="pay-card">
+                                   <span class="pay-icon">
+                                        <i data-lucide="credit-card"></i>
+                                   </span>
+                                   <p class="pay-name">Cartão de Crédito</p>
+                                   <span class="pay-check"></span>
+                              </div>
+                         </label>
+
+                         <!-- Debit Card -->
+                         <label class="pay-item">
+                              <input type="radio" name="payment" id="pay-debit" value="debit">
+                              <div class="pay-card">
+                                   <span class="pay-icon"><i data-lucide="credit-card"></i></span>
+                                   <p class="pay-name">Cartão de Débito</p>
+                                   <span class="pay-check"></span>
+                              </div>
+                         </label>
+
+                         <!-- Cash -->
+                         <label class="pay-item">
+                              <input type="radio" name="payment" id="pay-cash" value="cash">
+                              <div class="pay-card">
+                                   <span class="pay-icon"><i data-lucide="coins"></i></span>
+                                   <p class="pay-name">Dinheiro</p>
+                                   <span class="pay-check"></span>
+                              </div>
+                         </label>
+                    </div>
+               </main>
+
+               <footer class="screen-footer">
+                    <button id="btn-confirm" class="btn btn-primary btn-full">Confirmar Pedido</button>
+               </footer>
+          </section>
+
+          <!-- SCREEN 5: ORDER STATUS -->
+          <section id="screen-status" class="screen hidden">
+               <header class="screen-header">
+                    <h2 class="screen-title">Seu Pedido</h2>
+               </header>
+
+               <main class="content">
+                    <!-- Order ID -->
+                    <div class="status-box order-id">
+                         <p class="label">Número do pedido</p>
+                         <p class="value" id="order-number">
+                              <!-- Order number inserted by JS -->
+                         </p>
+                    </div>
+
+                    <!-- Progress Timeline -->
+                    <div class="timeline">
+                         <div class="timeline-item active">
+                              <div class="timeline-circle">✓</div>
+                              <p class="timeline-label">Pedido Recebido</p>
+                         </div>
+                         <div class="timeline-line"></div>
+
+                         <div class="timeline-item">
+                              <div class="timeline-circle">👨‍🍳</div>
+                              <p class="timeline-label">Preparando</p>
+                         </div>
+                         <div class="timeline-line"></div>
+
+                         <div class="timeline-item">
+                              <div class="timeline-circle">🚚</div>
+                              <p class="timeline-label">Saindo para Entrega</p>
+                         </div>
+                         <div class="timeline-line"></div>
+
+                         <div class="timeline-item">
+                              <div class="timeline-circle">🏠</div>
+                              <p class="timeline-label">Entregue</p>
+                         </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="summary">
+                         <h3 class="summary-title">Resumo do Pedido</h3>
+
+                         <div class="summary-item">
+                              <span class="summary-label">Produto:</span>
+                              <span class="summary-value" id="summary-product">
+                                   <!-- Selected product inserted by JS -->
+                              </span>
+                         </div>
+
+                         <div class="summary-item">
+                              <span class="summary-label">Tamanho:</span>
+                              <span class="summary-value" id="summary-size">
+                                   <!-- Selected size inserted by JS -->
+                              </span>
+                         </div>
+
+                         <div class="summary-item">
+                              <span class="summary-label">Acompanhamentos:</span>
+                              <span class="summary-value" id="summary-toppings">
+                                   <!-- Selected toppings inserted by JS -->
+                              </span>
+                         </div>
+
+                         <div class="summary-item">
+                              <span class="summary-label">Pagamento:</span>
+                              <span class="summary-value" id="summary-payment">
+                                   <!-- Payment method inserted by JS -->
+                              </span>
+                         </div>
+                    </div>
+               </main>
+
+               <footer class="screen-footer">
+                    <button id="btn-new-order" class="btn btn-primary btn-full">Fazer Novo Pedido</button>
+               </footer>
+          </section>
+
+     </div>
+     <script src="script.js"></script>
+</body>
+
+</html>
