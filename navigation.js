@@ -1,3 +1,5 @@
+import { verify } from "./script.js" 
+
 // screens
 let screenHome = document.querySelector('#screen-home')
 let screenSize = document.querySelector('#screen-size')
@@ -7,11 +9,12 @@ let screenStatus = document.querySelector('#screen-status')
 
 
 export const screen = {screenHome, screenSize, screenTopping, screenPayment, screenStatus}
-// buttons back -------
 
+// buttons back -------
 let btnBackSize = document.querySelector('#btn-back-size')
 let btnBackTopping = document.querySelector('#btn-back-toppings')
 let btnBackPay = document.querySelector('#btn-back-payment')
+
 
 btnBackSize.addEventListener('click', () => {
      screenSize.className = 'screen hidden'
@@ -28,10 +31,7 @@ btnBackPay.addEventListener('click', () => {
      screenPayment.className = 'screen hidden'
 })
 
-
-
 // buttons next --------
-
 let btnNextSize = document.querySelector('.btn-full')
 let btnEscolher = document.querySelector('.btn-primary')
 let btnNextTopping = document.querySelector('#btn-next-toppings')
@@ -44,18 +44,24 @@ btnEscolher.addEventListener('click', () => {
 })
 
 btnNextSize.addEventListener('click', () => {
-     screenSize.className = 'screen hidden'
-     screenTopping.className = 'screen active'
+     if(verify.fieldSize('input[name="size"]', 'Ops! Escolha um tamanho')) {
+          screenSize.className = 'screen hidden'
+          screenTopping.className = 'screen active'
+     }
 })
 
 btnNextTopping.addEventListener('click', () => {
-     screenTopping.className = 'screen hidden'
-     screenPayment.className = 'screen active'
+     if(verify.fieldSize('input[type="checkbox"]', 'Ops! Escolha pelo menos um complemento')) {
+          screenTopping.className = 'screen hidden'
+          screenPayment.className = 'screen active'
+     }
 })
 
 btnConfirm.addEventListener('click', () => {
-     screenPayment.className = 'screen hidden'
-     screenStatus.className = 'screen active'
+     if(verify.fieldSize('input[name="payment"]', 'Selecione uma forma de pagamento')) {
+          screenPayment.className = 'screen hidden'
+          screenStatus.className = 'screen active'
+     }
 })
 
 btnNewOrder.addEventListener('click', () => {
