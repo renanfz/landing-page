@@ -127,7 +127,6 @@ body {
 /* ========== HEADER ========== */
 .app-header {
      padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
-     background-color: var(--color-white);
      color: var(--color-text);
      text-align: center;
      box-shadow: var(--shadow-sm);
@@ -242,6 +241,8 @@ svg {
      border-top: 1px solid var(--color-border);
      display: flex;
      gap: var(--spacing-sm);
+     width: 100vw;
+     position: fixed;
      bottom: 0;
 }
 
@@ -317,8 +318,10 @@ svg {
      );
 }
 
-.category-card[data-category="acai"] {
-     
+.category-card[data-category="acai"] .card-image {
+          background: url(https://static.vecteezy.com/ti/fotos-gratis/t1/71531335-delicioso-banana-acai-tigela-receita-com-granola-e-caramelo-chuvisco-para-saudavel-cafe-da-manha-e-sobremesa-foto.jpeg);
+     background-size: cover;
+     background-position: center;
 }
 
 .category-card[data-category="ice-cream"] {
@@ -336,7 +339,9 @@ svg {
 }
 
 .category-card[data-category="ice-cream"] .card-image {
-     background: linear-gradient(135deg, #F8FAFF 0%, #EFF6FF 100%);
+     background: url(https://png.pngtree.com/thumb_back/fh260/background/20230712/pngtree-3d-rendered-mockup-of-ice-cream-packaging-image_3834104.jpg);
+     background-size: cover;
+     background-position: center;
 }
 
 .emoji-icon {
@@ -365,7 +370,7 @@ svg {
 .size-list {
      display: flex;
      flex-direction: column;
-     gap: var(--spacing-sm);
+     gap: 8px;
 }
 
 .size-option {
@@ -626,6 +631,66 @@ img {
      color: var(--color-primary);
 }
 
+/* Modal */
+/* Customização global necessária para a fonte do Google */
+@import url('https://googleapis.com');
+
+/* Elemento Dialog (O Modal) */
+dialog {
+  background-color: #f3f4f9; /* Cor de superfície padrão Material 3 */
+  border: none;
+  border-radius: 20px; /* Cantos muito arredondados característicos */
+  padding: 24px;
+  width: 90%;
+  max-width: 430px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  justify-content: center;
+  margin: 40% auto;
+}
+
+/* Fundo escuro nativo do dialog (Backdrop) */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4); /* Opacidade padrão Google */
+}
+
+/* Mensagem de texto */
+p.msgbox {
+  font-size: 1rem; /* 16px */
+  color: #444746; /* Tom de cinza escuro do Google */
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+/* Botão Estilo Google (Filled Primary) */
+button.btn-modal {
+  display: block;
+  margin-left: auto; /* Alinha o botão totalmente à direita */
+  background-color: #0b57d0; /* Azul Google */
+  color: #ffffff;
+  border: none;
+  border-radius: 100px; /* Formato pílula */
+  padding: 0 24px;
+  height: 40px;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Estados de interação do botão */
+.btn-modal:hover {
+  background-color: #0842a0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-modal:active {
+  background-color: #052e6f;
+}
+
+
 /* Timeline */
 .timeline {
      display: flex;
@@ -775,7 +840,8 @@ img {
      }
      .screen-footer {
           width: 100%;
-     }
+          position: relative;
+     } 
      .status-value {
           width: 100%;
      }

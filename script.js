@@ -22,4 +22,12 @@ function fieldSize(nameElement, message) {
      }
 }
 
+function openModal() {
+     let modal = document.querySelector('dialog')
+     modal.showModal()
+}
+
+document.querySelector('#ice-card').addEventListener('click', openModal)
+
 export const verify = {fieldSize}
+

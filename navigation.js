@@ -33,7 +33,7 @@ btnBackPay.addEventListener('click', () => {
 
 // buttons next --------
 let btnNextSize = document.querySelector('.btn-full')
-let btnEscolher = document.querySelector('.btn-primary')
+let btnEscolher = document.querySelector('#acai-card')
 let btnNextTopping = document.querySelector('#btn-next-toppings')
 let btnConfirm = document.querySelector('#btn-confirm')
 let btnNewOrder = document.querySelector('#btn-new-order')
