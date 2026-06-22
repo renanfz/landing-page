@@ -554,14 +554,11 @@ svg {
 
 .pay-card {
      padding: 5px 25px 5px 5px;
-     background-color: var(--color-white);
-     border: 1px solid var(--color-border);
+     background-color: var(--color-pale);
      border-radius: var(--radius-md);
      display: flex;
      align-items: center;
      gap: 1px;
-     box-shadow: 0px 1px 7px 1px rgba(120, 120, 120, 0.170
-     );
      transition: var(--transition);
 }
 
@@ -699,7 +696,7 @@ button.btn-modal {
 .timeline {
      display: flex;
      flex-direction: column;
-     gap: var(--spacing-lg);
+     gap: var(--spacing-sm);
      margin-bottom: var(--spacing-lg);
 }
 

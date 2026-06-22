@@ -45,6 +45,7 @@ btnEscolher.addEventListener('click', () => {
 
 btnNextSize.addEventListener('click', () => {
      if(verify.fieldSize('input[name="size"]', 'Ops! Escolha um tamanho')) {
+          verify.getData('input[name="size"]')
           screenSize.className = 'screen hidden'
           screenTopping.className = 'screen active'
      }
@@ -61,6 +62,7 @@ btnConfirm.addEventListener('click', () => {
      if(verify.fieldSize('input[name="payment"]', 'Selecione uma forma de pagamento')) {
           screenPayment.className = 'screen hidden'
           screenStatus.className = 'screen active'
+          verify.randomOrder()
      }
 })
 
