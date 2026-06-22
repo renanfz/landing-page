@@ -45,7 +45,7 @@ btnEscolher.addEventListener('click', () => {
 
 btnNextSize.addEventListener('click', () => {
      if(verify.fieldSize('input[name="size"]', 'Ops! Escolha um tamanho')) {
-          verify.getData('input[name="size"]')
+          verify.getData('input[name="size"]', 'dataset.ml')
           screenSize.className = 'screen hidden'
           screenTopping.className = 'screen active'
      }
@@ -53,6 +53,7 @@ btnNextSize.addEventListener('click', () => {
 
 btnNextTopping.addEventListener('click', () => {
      if(verify.fieldSize('input[type="checkbox"]', 'Ops! Escolha pelo menos um complemento')) {
+          verify.getData('input[type="checkbox"]', 'dataset.topping')
           screenTopping.className = 'screen hidden'
           screenPayment.className = 'screen active'
      }
@@ -63,6 +64,8 @@ btnConfirm.addEventListener('click', () => {
           screenPayment.className = 'screen hidden'
           screenStatus.className = 'screen active'
           verify.randomOrder()
+          verify.getData('input[name="payment"]', 'value')
+          verify.renderStatus()
      }
 })
 
