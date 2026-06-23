@@ -125,12 +125,23 @@ body {
      text-align: center;
      box-shadow: var(--shadow-sm);
      border-bottom: 1px solid var(--color-border);
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
 .logo {
      font-size: var(--font-size-2xl);
      font-weight: 700;
      letter-spacing: -0.5px;
+}
+
+svg.icon-logo {
+     color: var(--color-primary);
+     height: 37px;
+     width: 37px;
+     margin: 10px 8px 9px 0px;
+     
 }
 
 .screen-header {
@@ -877,4 +888,72 @@ button.btn-modal {
           --color-light: #2D2D2D;
           --color-pale: #2A2A2A;
      }
+}
+
+
+/* Botão fixo no canto inferior direito */
+.developer-credit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 52px;
+    height: 52px;
+
+    background: var(--color-primary);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: width 0.35s ease, border-radius 0.35s ease;
+    z-index: 999;
+}
+
+/* Pequeno ponto inicial */
+.developer-credit::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+
+/* Texto oculto inicialmente */
+.developer-credit span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: sans-serif;
+
+    white-space: nowrap;
+    opacity: 0;
+
+    transition: opacity 0.2s ease 0.15s;
+}
+
+/* Expansão suave para a esquerda */
+.developer-credit:hover,
+.developer-credit:active {
+    width: 190px;
+    justify-content: center;
+}
+
+/* Esconde o ponto quando expandido */
+.developer-credit:hover::before,
+.developer-credit:active::before {
+    opacity: 0;
+}
+
+/* Revela o texto */
+.developer-credit:hover span,
+.developer-credit:active span {
+    opacity: 1;
 }

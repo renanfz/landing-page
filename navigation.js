@@ -72,6 +72,7 @@ btnConfirm.addEventListener('click', () => {
 btnNewOrder.addEventListener('click', () => {
      screenStatus.className = 'screen hidden'
      screenHome.className = 'screen active'
+     window.location.reload()
 })
 
 lucide.createIcons()
